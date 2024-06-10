@@ -5,6 +5,7 @@ COREKIT_PATH = ./Corekit
 SRC = src/main.c \
 	src/moves/switch.c \
 	src/moves/rotate.c \
+	src/moves/reverse_rotate.c \
 
 INCLUDES = ./includes
 
