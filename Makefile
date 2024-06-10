@@ -29,8 +29,7 @@ all:$(NAME)
 
 #-i is used to ingore errors
 clean:
-	@rm -fr *.o
-	@rm -fr **/*.o
+	@rm -fr $(OBJS)
 	@${MAKE} -C corekit clean -s
 	@echo "$(RED)[COREKIT]:\t COREKIT CLEAN$(RESET)"
 
@@ -45,7 +44,7 @@ fclean: clean
 re: fclean all
 
 remove_mlx:
-	@rm -fr mlx
+	@rm -r mlx
 
 test: all
 	 ./$(NAME)
