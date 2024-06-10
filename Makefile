@@ -4,6 +4,7 @@ COREKIT_PATH = ./Corekit
 
 SRC = src/main.c \
 	src/moves/switch.c \
+	src/moves/rotate.c \
 
 INCLUDES = ./includes
 

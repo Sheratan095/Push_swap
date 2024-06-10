@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   switch.c                                           :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:11:58 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/10 18:42:43 by marvin           ###   ########.fr       */
+/*   Created: 2024/06/10 18:30:32 by maceccar          #+#    #+#             */
+/*   Updated: 2024/06/10 18:46:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-static t_bool	ops_switch(t_stack *stack);
+t_bool	ops_rotate(t_stack *stack);
 
-t_bool	sa(t_stack *a)
+t_bool	ra(t_stack *a)
 {
-	return (ops_switch(a));
+	return (ops_rotate(a));
 }
 
-t_bool	sb(t_stack *b)
+t_bool	rb(t_stack *b)
 {
-	return (ops_switch(b));
+	return (ops_rotate(b));
 }
 
-t_bool	ss(t_stack *a, t_stack *b)
+t_bool	rr(t_stack *a, t_stack *b)
 {
-	return (ops_switch(a) && ops_switch(b));
+	return (ops_rotate(a) && ops_rotate(b));
 }
 
-static t_bool	ops_switch(t_stack *stack)
+
+t_bool	ops_rotate(t_stack *stack)
 {
-	int	tmp_first;
-	int	tmp_second;
+	int	tmp_tail;
 
 	if (stack == NULL || stack->length < 2)
 		return (false);
-	tmp_first = ft_pop(stack);
-	tmp_second = ft_pop(stack);
-	ft_push(stack, tmp_first);
-	ft_push(stack, tmp_second);
+	tmp_tail = ft_pop_tail(stack);
+	ft_push(stack, tmp_tail);
 	return (true);
 }
