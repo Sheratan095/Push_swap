@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 19:03:24 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/10 19:08:55 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:14:30 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_bool	pa(t_stack *a, t_stack *b)
 {
 	int	tmp_b_head;
-	
+
 	if (b->length <= 0)
 		return (false);
 	tmp_b_head = ft_pop(b);
@@ -26,7 +26,7 @@ t_bool	pa(t_stack *a, t_stack *b)
 t_bool	pb(t_stack *a, t_stack *b)
 {
 	int	tmp_a_head;
-	
+
 	if (a->length <= 0)
 		return (false);
 	tmp_a_head = ft_pop(a);

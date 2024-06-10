@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:30:32 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/10 18:46:57 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:14:30 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_bool	rr(t_stack *a, t_stack *b)
 {
 	return (ops_rotate(a) && ops_rotate(b));
 }
-
 
 t_bool	ops_rotate(t_stack *stack)
 {
