@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:23:50 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/10 19:02:17 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:09:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,15 @@ t_bool	rrb(t_stack *b);
 	@return Boolean that determines if the operation went well
 */
 t_bool	rrr(t_stack *a, t_stack *b);
+
+
+
+
+
+//---------------------------PUSH---------------------------
+
+t_bool	pa(t_stack *a, t_stack *b);
+
+t_bool	pb(t_stack *a, t_stack *b);
 
 #endif

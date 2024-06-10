@@ -6,6 +6,7 @@ SRC = src/main.c \
 	src/moves/switch.c \
 	src/moves/rotate.c \
 	src/moves/reverse_rotate.c \
+	src/moves/push.c \
 
 INCLUDES = ./includes
 

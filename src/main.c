@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:43:46 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/10 19:00:35 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:10:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main()
 	ft_printf("\n");
 	
 
-	ft_printf("|%i|\n\n", rrr(stack, stack1));
+	ft_printf("|%i|\n\n", pb(stack, stack1));
 
 	ft_display_stack(stack);
 	ft_printf("\n");
