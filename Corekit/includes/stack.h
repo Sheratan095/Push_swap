@@ -26,7 +26,7 @@ typedef struct s_stack_node
 typedef struct s_stack
 {
 	char				name;
-	int					length;
+	size_t				length;
 	struct s_stack_node	*head;
 	struct s_stack_node	*tail;
 }	t_stack;

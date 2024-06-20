@@ -14,19 +14,19 @@
 
 int	ft_get_position_in_stack(t_stack *stack, t_stack_node *node)
 {
-	int				i;
-	t_stack_node	*cursor;
+	int				index;
+	t_stack_node	*tmp;
 
-	i = 0;
+	index = 0;
 	if (!stack || !node)
 		return (-1);
-	cursor = stack->head;
-	while (i < stack->length)
+	tmp = stack->head;
+	while (tmp != NULL)
 	{
-		if (node == cursor)
-			return (i);
-		i++;
-		cursor = cursor->next;
+		if (node == tmp)
+			return (index);
+		index++;
+		tmp = tmp->next;
 	}
 	return (-1);
 }

@@ -44,7 +44,7 @@ int	greatest_smaller_than(t_stack *stack, int x)
 		cursor = cursor->next;
 	}
 	if (target == x)
-		target = min_value(stack);
+		target = ft_get_min_value(stack);
 	return (target);
 }
 

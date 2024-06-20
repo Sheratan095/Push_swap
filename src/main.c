@@ -12,22 +12,6 @@
 
 #include "push_swap.h"
 
-int	min_value(t_stack *stack)
-{
-	int				min;
-	t_stack_node	*node;
-
-	node = stack->head;
-	min = stack->head->value;
-	while (node != NULL)
-	{
-		if (min > node->value)
-			min = node->value;
-		node = node->next;
-	}
-	return (min);
-}
-
 //Scorre tutto lo stack, se esiste qualocosa prima, se e minore e ordinato
 t_bool	is_stack_ordered(t_stack *stack)
 {
@@ -92,7 +76,7 @@ int	main(int argc, char **argv)
 		ft_sort_three(a);
 		while (b->length != 0)
 			sort(a, b);
-		move(get_insertion_cost(a, min_value(a)), a);
+		move(get_insertion_cost(a, ft_get_min_value(a)), a);
 	}
 	return (ft_free_stack(a), ft_free_stack(b), 0);
 }
