@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:24:13 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:36:18 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 # define STACK_H
 
 # include "corekit.h"
-
-/**
-	Struct used for the dubly linked list of int
-
-	Circular dependency: con't use t_stack because it isn't still defined
-			This will result in a compilation error because the compiler
-			doesn't know what t_stack is at that point.
-*/
 
 typedef struct s_stack_node
 {
@@ -131,5 +123,12 @@ int				ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
 	@return Minimum value or 0 if stack is empty
 */
 int				ft_get_min_value(t_stack *stack);
+
+/**
+	@brief Find the maximum value in the stack
+	@param stack pointer to stack
+	@return Maximum value or 0 if stack is empty
+*/
+int				ft_get_max_value(t_stack *stack);
 
 #endif

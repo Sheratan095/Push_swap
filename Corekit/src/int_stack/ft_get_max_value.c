@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_get_max_value.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:26:02 by maceccar         ###   ########.fr       */
+/*   Created: 2024/06/21 00:26:00 by maceccar          #+#    #+#             */
+/*   Updated: 2024/06/21 00:34:57 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-void	*ft_memset(void *dest, int c, size_t count)
+int	ft_get_max_value(t_stack *stack)
 {
-	size_t			i;
-	unsigned char	*tmp;
+	int				max;
+	t_stack_node	*tmp;
 
-	tmp = dest;
-	i = 0;
-	while (i < count)
+	if (ft_is_stack_empty(stack))
+		return (0);
+	tmp = stack->head;
+	max = stack->head->value;
+	while (tmp != NULL)
 	{
-		tmp[i] = (unsigned char)c;
-		i++;
+		if (max < tmp->value)
+			max = tmp->value;
+		tmp = tmp->next;
 	}
-	return (dest);
+	return (max);
 }
