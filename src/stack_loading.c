@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:01:55 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:43:26 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 01:26:52 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ t_stack	*load_stack(int argc, char **argv, t_stack *stack)
 	char	**argv_splitted;
 	long	tmp_number;
 
-	if (argc == 1)
-		exit(ft_printf("Error\n"));
 	stack = ft_initialize_stack(stack);
 	argv_splitted = take_arguments(argc, argv, &i, stack);
 	while (argv_splitted[i])

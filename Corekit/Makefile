@@ -79,6 +79,7 @@ SRC_STACK = ./src/int_stack/ft_initialize_stack.c \
 			./src/int_stack/ft_get_position_in_stack.c \
 			./src/int_stack/ft_get_min_value.c \
 			./src/int_stack/ft_get_max_value.c \
+			./src/int_stack/ft_is_stack_ordered.c \
 
 
 SRC_PRINTF = ./src/ft_printf/ft_is_in.c \

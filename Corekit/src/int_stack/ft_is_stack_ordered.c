@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_stack.c                                    :+:      :+:    :+:   */
+/*   ft_is_stack_ordered.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 01:22:56 by maceccar         ###   ########.fr       */
+/*   Created: 2024/06/21 01:31:06 by maceccar          #+#    #+#             */
+/*   Updated: 2024/06/21 01:31:06 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	ft_free_stack(t_stack *stack)
+t_bool	is_stack_ordered(t_stack *stack)
 {
-	t_stack_node	*temp;
+	t_stack_node	*tmp;
 
-	if (ft_is_stack_empty(stack) == false)
+	if (ft_is_stack_empty(stack))
+		return (false);
+	tmp = stack->head;
+	while (tmp)
 	{
-		temp = stack->head;
-		while (temp != NULL)
+		if (tmp->prev)
 		{
-			stack->head = stack->head->next;
-			free(temp);
-			temp = stack->head;
+			if (tmp->prev->value > tmp->value)
+				return (false);
 		}
+		tmp = tmp->next;
 	}
-	if (stack)
-		free(stack);
+	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 01:01:36 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 01:22:56 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,12 @@ int				ft_get_min_value(t_stack *stack);
 	@return Maximum value or 0 if stack is empty
 */
 int				ft_get_max_value(t_stack *stack);
+
+/**
+	@brief Check if stack is ordered
+	@param stack pointer to stack
+	@return Boolean
+*/
+enum e_bool		is_stack_ordered(t_stack *stack);
 
 #endif
