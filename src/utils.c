@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:24:25 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/20 19:42:06 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/20 23:42:00 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	get_insertion_cost(t_stack *b, int value)
 	int	cost;
 	int	position;
 
-	position = get_position(b, ft_stack_contains(b, value));
+	position = ft_get_position_in_stack(b, ft_stack_contains(b, value));
 	if (position > b->length / 2)
 		cost = -(b->length - position);
 	else

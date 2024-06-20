@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:41:00 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/20 19:42:05 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/20 23:59:46 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,6 @@ int	min_value(t_stack *stack)
 		node = node->next;
 	}
 	return (min);
-}
-
-//gets the position, first value is 0
-int	get_position(t_stack *stack, t_stack_node *node)
-{
-	int				i;
-	t_stack_node	*cursor;
-
-	i = 0;
-	cursor = stack->head;
-	while (i < stack->length)
-	{
-		if (node == cursor)
-			return (i);
-		i++;
-		cursor = cursor->next;
-	}
-	return (0);
 }
 
 //Scorre tutto lo stack, se esiste qualocosa prima, se e minore e ordinato

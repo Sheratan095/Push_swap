@@ -123,6 +123,6 @@ t_stack			*ft_push_tail(t_stack *stack, int new_value);
 	@param node pointer to node
 	@return Position of the node or -1 if there isn't
 */
-int	ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
+int				ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
 
 #endif
