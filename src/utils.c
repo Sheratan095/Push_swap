@@ -26,7 +26,7 @@ int	smallest_bigger_than(t_stack *stack, int x)
 		cursor = cursor->next;
 	}
 	if (target == x)
-		target = max_value(stack);
+		target = ft_get_max_value(stack);
 	return (target);
 }
 
@@ -62,26 +62,10 @@ int	get_insertion_cost(t_stack *b, int value)
 	return (cost);
 }
 
-int	max_value(t_stack *stack)
-{
-	int				max;
-	t_stack_node	*node;
-
-	node = stack->head;
-	max = stack->head->value;
-	while (node != NULL)
-	{
-		if (max < node->value)
-			max = node->value;
-		node = node->next;
-	}
-	return (max);
-}
-
 //ottiene il target node in base all'ordine "a"->decrescente "b"->crescente
 int	get_selection_cost(t_stack *a, t_stack_node *node)
 {
-	int				target;
+	int	target;
 
 	if (a->name == 'a')
 		target = greatest_smaller_than(a, node->value);
