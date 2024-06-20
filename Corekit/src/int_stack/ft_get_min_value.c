@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_get_min_value.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:09:55 by maceccar         ###   ########.fr       */
+/*   Created: 2024/06/21 00:26:00 by maceccar          #+#    #+#             */
+/*   Updated: 2024/06/21 00:26:00 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-void	*ft_bzero(void *dest, size_t count)
+int	ft_get_min_value(t_stack *stack)
 {
-	return (ft_memset(dest, '\0', count));
+	int				min;
+	t_stack_node	*tmp;
+
+	if (ft_is_stack_empty(stack))
+		return (0);
+	tmp = stack->head;
+	min = stack->head->value;
+	while (tmp != NULL)
+	{
+		if (min > tmp->value)
+			min = tmp->value;
+		tmp = tmp->next;
+	}
+	return (min);
 }

@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:07:31 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:24:13 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,12 @@ t_stack			*ft_push_tail(t_stack *stack, int new_value);
 	@return Position of the node or -1 if not found or if stack/node are null
 */
 int				ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
+
+/**
+	@brief Find the minimum value in the stack
+	@param stack pointer to stack
+	@return Minimum value or 0 if stack is empty
+*/
+int				ft_get_min_value(t_stack *stack);
 
 #endif
