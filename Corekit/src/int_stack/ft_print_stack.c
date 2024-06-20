@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_stack.c                                 :+:      :+:    :+:   */
+/*   ft_print_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:26:02 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:39:48 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	ft_display_stack(t_stack *stack)
+void	ft_print_stack(t_stack *stack)
 {
 	t_stack_node	*temp;
 

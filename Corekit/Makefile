@@ -67,7 +67,7 @@ SRC = ./src/char/ft_tolower.c \
 
 SRC_STACK = ./src/int_stack/ft_initialize_stack.c \
 			./src/int_stack/ft_create_node.c \
-			./src/int_stack/ft_display_stack.c \
+			./src/int_stack/ft_print_stack.c \
 			./src/int_stack/ft_is_stack_empty.c \
 			./src/int_stack/ft_free_stack.c \
 			./src/int_stack/ft_push.c \

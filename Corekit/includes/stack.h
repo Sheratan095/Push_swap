@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/21 00:36:18 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:39:48 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int				ft_pop_tail(t_stack *stack);
 	@brief Print in the termial the stack, starting from top
 	@param stack pointer to stack
 */
-void			ft_display_stack(t_stack *stack);
+void			ft_print_stack(t_stack *stack);
 
 /**
 	@brief Free the stack
