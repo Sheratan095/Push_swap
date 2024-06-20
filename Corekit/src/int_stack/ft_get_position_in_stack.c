@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_get_position_in_stack.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/20 23:42:00 by maceccar         ###   ########.fr       */
+/*   Created: 2024/06/21 00:09:51 by maceccar          #+#    #+#             */
+/*   Updated: 2024/06/21 00:09:51 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int	ft_get_position_in_stack(t_stack *stack, t_stack_node *node)
 {
-	size_t	i;
-	size_t	j;
-	size_t	little_len;
+	int				i;
+	t_stack_node	*cursor;
 
 	i = 0;
-	j = 0;
-	little_len = ft_strlen(little);
-	if (little_len < 1)
-		return ((char *)big);
-	while (i < len && big[i])
+	cursor = stack->head;
+	while (i < stack->length)
 	{
-		while (big[i + j] == little[j])
-		{
-			j++;
-			if ((i + j) > len)
-				return (NULL);
-			if (j == little_len)
-				return ((char *)big + i);
-		}
-		j = 0;
+		if (node == cursor)
+			return (i);
 		i++;
+		cursor = cursor->next;
 	}
-	return (NULL);
+	return (-1);
 }

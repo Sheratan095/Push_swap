@@ -6,7 +6,7 @@
 /*   By: maceccar <maceccar@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 18:40:17 by maceccar          #+#    #+#             */
-/*   Updated: 2024/06/20 19:42:04 by maceccar         ###   ########.fr       */
+/*   Updated: 2024/06/21 00:07:31 by maceccar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
+//TO DO levare name?
 typedef struct s_stack
 {
 	char				name;
@@ -38,14 +39,29 @@ typedef struct s_stack
 	struct s_stack_node	*tail;
 }	t_stack;
 
+/**
+	@brief Allocate the stack and set to NULL head and tail
+	@param stack pointer to stack that will be allocated
+	@return Pointer to allocated stack
+*/
 t_stack			*ft_initialize_stack(t_stack *stack);
 
+/**
+	@brief Create a new node of the stack
+	@param new_value value to assign to the new node
+	@return Pointer to created node
+*/
 t_stack_node	*ft_create_node(int value);
 
+/**
+	@brief Check if stack is empty or null
+	@param stack pointer to stack
+	@return Boolean
+*/
 enum e_bool		ft_is_stack_empty(t_stack *stack);
 
 /**
-	@brief Add new node to the stack
+	@brief Create new node and add it to the stack
 	@param stack pointer to stack
 	@param new_value value to assign to the new node
 	@return Pointer to stack
@@ -100,5 +116,13 @@ enum e_bool		ft_search_duplicate(t_stack *stack);
 	@return Pointer to stack
 */
 t_stack			*ft_push_tail(t_stack *stack, int new_value);
+
+/**
+	@brief Get index of the node in the stack
+	@param stack pointer to stack
+	@param node pointer to node
+	@return Position of the node or -1 if there isn't
+*/
+int	ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
 
 #endif

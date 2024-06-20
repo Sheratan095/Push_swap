@@ -77,6 +77,7 @@ SRC_STACK = ./src/int_stack/ft_initialize_stack.c \
 			./src/int_stack/ft_pop_tail.c \
 			./src/int_stack/ft_stack_contains.c \
 			./src/int_stack/ft_search_duplicate.c \
+			./src/int_stack/ft_get_position_in_stack.c \
 
 
 SRC_PRINTF = ./src/ft_printf/ft_is_in.c \
