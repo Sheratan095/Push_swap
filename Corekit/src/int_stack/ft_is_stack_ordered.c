@@ -12,7 +12,7 @@
 
 #include "stack.h"
 
-t_bool	is_stack_ordered(t_stack *stack)
+t_bool	ft_is_stack_ordered(t_stack *stack)
 {
 	t_stack_node	*tmp;
 

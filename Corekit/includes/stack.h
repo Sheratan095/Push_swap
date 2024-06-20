@@ -136,6 +136,6 @@ int				ft_get_max_value(t_stack *stack);
 	@param stack pointer to stack
 	@return Boolean
 */
-enum e_bool		is_stack_ordered(t_stack *stack);
+enum e_bool		ft_is_stack_ordered(t_stack *stack);
 
 #endif

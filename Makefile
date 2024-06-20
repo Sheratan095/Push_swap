@@ -16,7 +16,9 @@ SRC = src/main.c \
 
 INCLUDES = ./includes
 
-# FLAGS		= -Wall -Werror -Wextra -g
+ARG = 1 3 2
+
+FLAGS		= -Wall -Werror -Wextra -g
 #TO DO rimettere le flag
 
 OBJS		= $(SRC:%.c=%.o)
@@ -55,10 +57,10 @@ remove_mlx:
 	@rm -r mlx
 
 test: all
-	 ./$(NAME)
+	 ./$(NAME) $(ARG)
 
 val: all
-	 valgrind --leak-check=full --track-origins=yes -s --show-leak-kinds=all ./$(NAME)
+	 valgrind --leak-check=full --track-origins=yes -s --show-leak-kinds=all ./$(NAME) $(ARG)
 
 #COLORS
 
