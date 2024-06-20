@@ -14,7 +14,7 @@
 
 t_bool	ft_is_stack_empty(t_stack *stack)
 {
-	if (!stack)
+	if (stack == NULL)
 		return (true);
 	return (stack->length == 0);
 }

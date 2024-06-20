@@ -23,6 +23,8 @@ t_stack	*ft_push(t_stack *stack, int new_value)
 {
 	t_stack_node	*updated_head;
 
+	if (!stack)
+		return (NULL);
 	updated_head = ft_create_node(new_value);
 	if (ft_is_stack_empty(stack))
 	{

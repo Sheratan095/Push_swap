@@ -121,7 +121,7 @@ t_stack			*ft_push_tail(t_stack *stack, int new_value);
 	@brief Get index of the node in the stack
 	@param stack pointer to stack
 	@param node pointer to node
-	@return Position of the node or -1 if there isn't
+	@return Position of the node or -1 if there isn't or if stack or node are null
 */
 int				ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
 

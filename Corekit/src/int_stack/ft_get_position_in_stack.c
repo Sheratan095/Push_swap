@@ -18,6 +18,8 @@ int	ft_get_position_in_stack(t_stack *stack, t_stack_node *node)
 	t_stack_node	*cursor;
 
 	i = 0;
+	if (!stack || !node)
+		return (-1);
 	cursor = stack->head;
 	while (i < stack->length)
 	{

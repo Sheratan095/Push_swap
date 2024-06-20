@@ -26,5 +26,6 @@ void	ft_free_stack(t_stack *stack)
 			temp = stack->head;
 		}
 	}
-	free(stack);
+	if (stack)
+		free(stack);
 }
