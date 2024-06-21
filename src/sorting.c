@@ -26,6 +26,8 @@ void	sort(t_stack *from, t_stack *to)
 	t_stack			*cost_b;
 	t_stack_node	*node;
 
+	cost_a = NULL;
+	cost_b = NULL;
 	cost_a = ft_initialize_stack(cost_a);
 	cost_b = ft_initialize_stack(cost_b);
 	node = to->head;

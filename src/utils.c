@@ -55,7 +55,7 @@ int	get_insertion_cost(t_stack *b, int value)
 	int	position;
 
 	position = ft_get_position_in_stack(b, ft_stack_contains(b, value));
-	if (position > b->length / 2)
+	if ((size_t)position > b->length / 2)
 		cost = -(b->length - position);
 	else
 		cost = position;

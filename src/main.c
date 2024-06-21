@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
-		return (ft_printf("\n"));
+		return (0);
 	a = load_stack(argc, argv, a);
 	a->name = 'a';
 	b = ft_initialize_stack(b);
