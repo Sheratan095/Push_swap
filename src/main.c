@@ -14,6 +14,9 @@
 
 static void	sort_them_all(t_stack *a, t_stack *b);
 
+//Check number of arguments:
+// If no parameters are specified, the program must not display anything
+//	and give the prompt back
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -22,7 +25,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
-		return (ft_printf("Error\n"));
+		return (ft_printf("\n"));
 	a = load_stack(argc, argv, a);
 	a->name = 'a';
 	b = ft_initialize_stack(b);
