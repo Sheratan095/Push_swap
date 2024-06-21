@@ -114,6 +114,7 @@ t_stack			*ft_push_tail(t_stack *stack, int new_value);
 	@param stack pointer to stack
 	@param node pointer to node
 	@return Position of the node or -1 if not found or if stack/node are null
+	TO DO sarebbe ancora meglio usare ssize_t (size_t che include anche -1)
 */
 int				ft_get_position_in_stack(t_stack *stack, t_stack_node *node);
 
