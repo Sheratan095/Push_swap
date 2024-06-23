@@ -12,7 +12,7 @@
 
 #include "corekit.h"
 
-t_bool	ft_is_string_numeric(char *str)
+t_bool	ft_is_string_numeric(const char *str)
 {
 	int	i;
 
