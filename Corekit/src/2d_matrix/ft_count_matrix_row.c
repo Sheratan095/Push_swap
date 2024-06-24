@@ -12,7 +12,7 @@
 
 #include "corekit.h"
 
-size_t	ft_count_matrix_row(void **matrix)
+size_t	ft_count_matrix_row(const void **matrix)
 {
 	size_t	i;
 

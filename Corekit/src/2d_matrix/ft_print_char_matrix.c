@@ -12,7 +12,7 @@
 
 #include "corekit.h"
 
-void	ft_print_char_matrix(char **matrix)
+void	ft_print_char_matrix(const char **matrix)
 {
 	int	i;
 
