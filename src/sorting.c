@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// TO DO da spostare in corekit
 //absolute value
 int	abs(int a)
 {
@@ -41,11 +42,4 @@ void	sort(t_stack *from, t_stack *to)
 	play_next_best_move(from, to, cost_a, cost_b);
 	ft_free_stack(cost_a);
 	ft_free_stack(cost_b);
-}
-
-void	reverse_rotation(t_stack *a)
-{
-	if (ft_is_stack_empty(a) || a->length < 2)
-		return ;
-	a = ft_push_tail(a, ft_pop(a));
 }

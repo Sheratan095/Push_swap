@@ -53,18 +53,11 @@ t_bool	rr(t_stack *a, t_stack *b);
 //-------------------------------REVERSE ROTATE-------------------------------
 
 /**
-	@brief Move 1° element of stack a in the last position
-	@param t_stack pointer to stack a
+	@brief Move 1° element of stack x in the last position
+	@param t_stack pointer to stack x
 	@return Boolean that determines if the operation went well
 */
-// t_bool	rra(t_stack *a);
-
-/**
-	@brief Move 1° element of stack b in the last position
-	@param t_stack pointer to stack b
-	@return Boolean that determines if the operation went well
-*/
-// t_bool	rrb(t_stack *b);
+t_bool	rrx(t_stack *stack);
 
 /**
 	@brief Move 1° element of both stacks in the last position
@@ -72,14 +65,14 @@ t_bool	rr(t_stack *a, t_stack *b);
 	@param t_stack pointer to stack b
 	@return Boolean that determines if the operation went well
 */
-// t_bool	rrr(t_stack *a, t_stack *b);
+t_bool	rrr(t_stack *a, t_stack *b);
 
 //------------------------------------PUSH------------------------------------
 
 /**
 	@brief Move 1° element of stack_2 to stack_1
-	@param t_stack pointer to stack 1
-	@param t_stack pointer to stack 2
+	@param t_stack pointer to stack 1 (to)
+	@param t_stack pointer to stack 2 (from)
 	@return Boolean that determines if the operation went well
 */
 t_bool	px(t_stack *stack_1, t_stack *stack_2);

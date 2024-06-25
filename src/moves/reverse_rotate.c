@@ -14,19 +14,24 @@
 
 t_bool	ops_reverse_rotate(t_stack *stack);
 
-t_bool	rra(t_stack *a)
+t_bool	rrx(t_stack *stack)
 {
-	return (ops_reverse_rotate(a));
-}
+	t_bool	result;
 
-t_bool	rrb(t_stack *b)
-{
-	return (ops_reverse_rotate(b));
+	result = ops_reverse_rotate(stack); 
+	if (result)
+		ft_printf("rr%c\n", stack->name);
+	return (result);
 }
 
 t_bool	rrr(t_stack *a, t_stack *b)
 {
-	return (ops_reverse_rotate(a) && ops_reverse_rotate(b));
+	t_bool	result;
+
+	result = ops_reverse_rotate(a) && ops_reverse_rotate(b); 
+	if (result)
+		ft_printf("rrr");
+	return (result);
 }
 
 t_bool	ops_reverse_rotate(t_stack *stack)
