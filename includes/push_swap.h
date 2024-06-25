@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <math.h>
 # include "corekit.h"
-# include "moves.h"
 
 t_stack	*load_stack(int argc, char **argv, t_stack *stack);
 
@@ -45,7 +44,9 @@ void	rrx(t_stack *a);
 
 void	rx(t_stack *a);
 
-// void	sx(t_stack *a);
+void	sx(t_stack *a);
+
+void	px(t_stack *a, t_stack *b);
 
 void	sort(t_stack *from, t_stack *to);
 

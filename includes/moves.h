@@ -19,11 +19,18 @@
 //-----------------------------------SWITCH-----------------------------------
 
 /**
-	@brief Switch 1° and 2° element in the stack x
+	@brief Switch 1° and 2° element in the stack a
 	@param t_stack pointer to stack a
 	@return Boolean that determines if the operation went well
 */
-t_bool	sx(t_stack *a);
+// t_bool	sa(t_stack *a);
+
+/**
+	@brief Switch 1° and 2° element in the stack b
+	@param t_stack pointer to stack b
+	@return Boolean that determines if the operation went well
+*/
+// t_bool	sb(t_stack *b);
 
 /**
 	@brief Switch 1° and 2° element in both stacks
@@ -31,7 +38,7 @@ t_bool	sx(t_stack *a);
 	@param t_stack pointer to stack b
 	@return Boolean that determines if the operation went well
 */
-t_bool	ss(t_stack *a, t_stack *b);
+// t_bool	ss(t_stack *a, t_stack *b);
 
 //-----------------------------------ROTATE-----------------------------------
 
@@ -83,12 +90,8 @@ t_bool	ss(t_stack *a, t_stack *b);
 
 //------------------------------------PUSH------------------------------------
 
-/**
-	@brief Move 1° element from stack_1 on top of stack_2
-	@param t_stack pointer first stack (x)
-	@param t_stack pointer second stack
-	@return Boolean that determines if the operation went well
-*/
-t_bool	px(t_stack *stack_1, t_stack *stack_2);
+// t_bool	pa(t_stack *a, t_stack *b);
+
+// t_bool	pb(t_stack *a, t_stack *b);
 
 #endif

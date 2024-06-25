@@ -14,24 +14,19 @@
 
 static t_bool	ops_switch(t_stack *stack);
 
-t_bool	sx(t_stack *stack)
-{	
-	t_bool	result;
+t_bool	sa(t_stack *a)
+{
+	return (ops_switch(a));
+}
 
-	result = ops_switch(stack);
-	if (result)
-		ft_printf("s%c\n", stack->name);
-	return (result);
+t_bool	sb(t_stack *b)
+{
+	return (ops_switch(b));
 }
 
 t_bool	ss(t_stack *a, t_stack *b)
 {
-	t_bool	result;
-
-	result = ops_switch(a) && ops_switch(b);
-	if (result)
-		ft_printf("ss%c\n");
-	return (result);
+	return (ops_switch(a) && ops_switch(b));
 }
 
 static t_bool	ops_switch(t_stack *stack)

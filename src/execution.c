@@ -91,7 +91,7 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	{
 		i = abs(ca->value) + abs(cb->value);
 		if (i == 0)
-			return ((void)px(b, a));
+			return (px(b, a));
 		if (i == lowcost)
 			return (play(ca->value, cb->value, a, b));
 		node = node->next;
