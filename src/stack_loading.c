@@ -12,21 +12,20 @@
 
 #include "push_swap.h"
 
-t_bool	double_check_number(int number, char *str_number);
-void	error(int argc, char **argv, t_stack *stack);
-char	**take_arguments(int argc, char **argv, int *i, t_stack *stack);
+static t_bool	double_check_number(int number, char *str_number);
+static void		error(int argc, char **argv, t_stack *stack);
+static char		**take_arguments(int argc, char **argv, int *i, t_stack *stack);
 
 // tmp_number è long per eviatare soliti problemi con il minimo intero
-// Se argc = 2
-//	->il formato è "1 2 3 4 5"->va splittato e la i parte da 0
-// Altrimenti
-//	->il formato è 1 2 3 4 5->già splittato e la i parte 1
-// CARICAMENTO
-// Se la stringa non è un numero
-//	->errore
-// Prendi il numero (atoi)
-// Fai la riprova (itoa)
-//	->errore
+// Ottieni la matrice contentente l'argomento
+// Cicla la matrice e per ogni elemento (stringa numerica)
+//		Verifica che la stringa contenga solo elementi numerici
+//		Ottieni il numero (atoi)
+//		Fai il doppio controllo sulla stringa iniziale
+//		Verifica che non sia già contenuto nello stack
+//		Pusha in coda (come nel checker)
+// Se argc == 2 vuol dire che la matrice è stata allocata durante la lettura
+// 	=> va liberata
 t_stack	*load_stack(int argc, char **argv, t_stack *stack)
 {
 	int		i;
@@ -52,8 +51,15 @@ t_stack	*load_stack(int argc, char **argv, t_stack *stack)
 	return (stack);
 }
 
-//i is just for norminette
-char	**take_arguments(int argc, char **argv, int *i, t_stack *stack)
+// i è per far capire alla funzione principale da che indice partire
+//	se il formato è ./push_swap 1 2 3 (argc > 1)
+//		i = 1 perchè se fosse 0, matrice[0] sarebbe ./pus_swap
+//		result sarà diretteamente argv, quindi non andrà deallocata
+//	se il formato è ./push_swap "1 2 3" (argc = 2)
+//		splitta argv[2]
+//		controlla che ci sia almeno un'elemento
+//	se argc == 1 => errore
+static char	**take_arguments(int argc, char **argv, int *i, t_stack *stack)
 {
 	char	**result;
 
@@ -74,10 +80,20 @@ char	**take_arguments(int argc, char **argv, int *i, t_stack *stack)
 	return (result);
 }
 
-//Check if ther's just '+' or '-' because ft_atol and ft_itoa
-//	would convert it in 0 but we need an error
+// Check if ther's just '+' or '-' because ft_atol and ft_itoa
+//		would convert it in 0 but we need an error
 //If first is '+' or '-' and the sequent char isn't a digit
-t_bool	double_check_number(int number, char *str_number)
+
+// Controlla che non la stringa non sia semplicemente "+" o "-"
+//		se il primo carattere è "+" o "-" dopo ci deve essere qualcosa
+//		fatto perché atoi(+/-) restituisce +/-0
+// Controlla che il numero non sfori i limiti dell'int castandolo a long
+//		e verificando che rientri nei limiti perché con l'atoi, i numeri
+//		troppo grandi o troppo piccolo andrebbero in overload nell'int
+//		restituendo un'intero
+// Ritrasformata il numero in stringa e lo confronta con quella dell'input
+// Libera la stringa allocata dentro 
+static t_bool	double_check_number(int number, char *str_number)
 {
 	t_bool	result;
 	char	*right_str_nmbr;
@@ -98,13 +114,16 @@ t_bool	double_check_number(int number, char *str_number)
 	return (result);
 }
 
-//Argc perchè se facessi free indistintamente che sia splittato
-//o il parametro originale, nel sel secondo caso darebbe
-//invalid pointer
-void	error(int argc, char **argv, t_stack *stack)
+// Se argc == 2 vuol dire che il formato è ./push_swap "1 2 3"
+//		=> la matrice è una matrice allocata => va deallocata
+// Altrimenti la matrice sarebbe argv stessa, quindi non va deallocata
+// Libera lo stack
+// Stampa errore 
+// Esci dal programma
+static void	error(int argc, char **matrix, t_stack *stack)
 {
 	if (argc == 2)
-		ft_free_matrix((void **)argv);
+		ft_free_matrix((void **)matrix);
 	ft_free_stack(stack);
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	exit(0);
