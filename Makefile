@@ -6,14 +6,13 @@ SRC = src/main.c \
 	src/execution.c \
 	src/sorting.c \
 	src/stack_loading.c \
+	src/moves.c \
 	src/utils.c \
-	src/moves/switch.c \
-	src/moves/push.c \
-	src/moves/rotate.c \
-	src/moves/reverse_rotate.c \
 
-# SRC = 
+# SRC = 	src/moves/switch.c \
+# 	src/moves/rotate.c \
 # 	src/moves/reverse_rotate.c \
+# 	src/moves/push.c \
 
 INCLUDES = ./includes
 

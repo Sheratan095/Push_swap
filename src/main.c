@@ -65,16 +65,25 @@ void	ft_sort_three(t_stack *stack)
 	n = stack->head;
 	if (n->value < n->next->value)
 	{
-		rx(stack);
+		rrx(stack);
 		if (ft_is_stack_ordered(stack))
 			return ;
 	}
 	if (n->value > n->next->value)
 	{
 		if (n->value > n->next->next->value)
-			rrx(stack);
+			rx(stack);
 		if (ft_is_stack_ordered(stack))
 			return ;
 	}
 	sx(stack);
 }
+
+//Just for norminette
+// int	initialize_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
+// {
+// 	a = load_stack(argc, argv, a);
+// 	a->name = 'a';
+// 	b = ft_initialize_stack(b);
+// 	b->name = 'b';
+// }

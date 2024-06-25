@@ -12,17 +12,24 @@
 
 #include "moves.h"
 
-//If stack_1 == a => pb
-//If stack_1 == b => pa
-t_bool	px(t_stack *stack_1, t_stack *stack_2)
+t_bool	pa(t_stack *a, t_stack *b)
 {
 	int	tmp_b_head;
 
-	if (ft_is_stack_empty(stack_2))
+	if (b->length <= 0)
 		return (false);
-	tmp_b_head = ft_pop(stack_2);
-	if (!ft_push(stack_1, tmp_b_head))
+	tmp_b_head = ft_pop(b);
+	ft_push(a, tmp_b_head);
+	return (true);
+}
+
+t_bool	pb(t_stack *a, t_stack *b)
+{
+	int	tmp_a_head;
+
+	if (a->length <= 0)
 		return (false);
-	ft_printf("p%c\n", stack_2->name);
+	tmp_a_head = ft_pop(a);
+	ft_push(b, tmp_a_head);
 	return (true);
 }

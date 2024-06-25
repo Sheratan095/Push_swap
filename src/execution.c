@@ -19,11 +19,11 @@ void	move(int movement, t_stack *stack)
 	if (movement > 0)
 	{
 		while (movement--)
-			rrx(stack);
+			rx(stack);
 	}
 	else
 		while (movement++)
-			rx(stack);
+			rrx(stack);
 }
 
 void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
@@ -32,7 +32,7 @@ void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
-			rrr(a, b);
+			rr(a, b);
 			moves_a--;
 			moves_b--;
 		}
@@ -41,7 +41,7 @@ void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
-			rr(a, b);
+			rrr(a, b);
 			moves_a++;
 			moves_b++;
 		}
@@ -91,7 +91,7 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	{
 		i = abs(ca->value) + abs(cb->value);
 		if (i == 0)
-			return ((void)px(b, a));
+			return (px(b, a));
 		if (i == lowcost)
 			return (play(ca->value, cb->value, a, b));
 		node = node->next;
@@ -100,3 +100,8 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	}
 }
 
+void	rrx(t_stack *stack)
+{
+	ft_printf("rr%c\n", stack->name);
+	rotation(stack);
+}
