@@ -43,12 +43,12 @@ void	sort(t_stack *from, t_stack *to)
 }
 
 //str => if stack_1 == a => pb else pa
-void	push_to(t_stack *stack_1, t_stack *stack_2)
-{
-	if (ft_is_stack_empty(stack_1))
-		return ;
-	stack_1 = ft_push(stack_2, ft_pop(stack_1));
-}
+// void	push_to(t_stack *stack_1, t_stack *stack_2)
+// {
+// 	if (ft_is_stack_empty(stack_1))
+// 		return ;
+// 	stack_1 = ft_push(stack_2, ft_pop(stack_1));
+// }
 
 void	reverse_rotation(t_stack *a)
 {

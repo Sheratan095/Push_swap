@@ -45,7 +45,7 @@ void	rrx(t_stack *a);
 
 void	rx(t_stack *a);
 
-void	px(t_stack *a, t_stack *b);
+// void	px(t_stack *a, t_stack *b);
 
 void	sort(t_stack *from, t_stack *to);
 
