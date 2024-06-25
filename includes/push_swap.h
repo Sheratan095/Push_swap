@@ -23,17 +23,7 @@ t_stack	*load_stack(int argc, char **argv, t_stack *stack);
 
 void	ft_sort_three(t_stack *stack);
 
-void	push_to(t_stack *stack_1, t_stack *stack_2);
-
-void	reverse_rotation(t_stack *a);
-
-void	rotation(t_stack *a);
-
 int		get_selection_cost(t_stack *a, t_stack_node *node);
-
-void	reverse_rotation(t_stack *a);
-
-void	rotation(t_stack *a);
 
 int		get_insertion_cost(t_stack *b, int value);
 
@@ -44,8 +34,6 @@ void	rr(t_stack *a, t_stack *b);
 void	rrx(t_stack *a);
 
 void	rx(t_stack *a);
-
-// void	sx(t_stack *a);
 
 void	sort(t_stack *from, t_stack *to);
 

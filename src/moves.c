@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+void	reverse_rotation(t_stack *a);
+
+void	rotation(t_stack *a);
 
 void	rx(t_stack *stack)
 {
