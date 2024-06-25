@@ -99,4 +99,3 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 		cb = cb->next;
 	}
 }
-

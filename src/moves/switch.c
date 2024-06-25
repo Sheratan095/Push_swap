@@ -18,7 +18,7 @@ t_bool	sx(t_stack *stack)
 {
 	t_bool	result;
 
-	result = ops_switch(stack); 
+	result = ops_switch(stack);
 	if (result)
 		ft_printf("s%c\n", stack->name);
 	return (result);
@@ -28,7 +28,7 @@ t_bool	ss(t_stack *a, t_stack *b)
 {
 	t_bool	result;
 
-	result = ops_switch(a) && ops_switch(b); 
+	result = ops_switch(a) && ops_switch(b);
 	if (result)
 		ft_printf("ss\n");
 	return (result);

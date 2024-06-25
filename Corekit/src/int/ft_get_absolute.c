@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "corekit.h"
+#include "corekit.h"
 
-int ft_get_absolute(int number)
+int	ft_get_absolute(int number)
 {
 	if (number < 0)
 		return (-number);

@@ -12,6 +12,29 @@
 
 #include "push_swap.h"
 
+void	ft_sort_three(t_stack *stack)
+{
+	t_stack_node	*n;
+
+	if (ft_is_stack_ordered(stack))
+		return ;
+	n = stack->head;
+	if (n->value < n->next->value)
+	{
+		rrx(stack);
+		if (ft_is_stack_ordered(stack))
+			return ;
+	}
+	if (n->value > n->next->value)
+	{
+		if (n->value > n->next->next->value)
+			rx(stack);
+		if (ft_is_stack_ordered(stack))
+			return ;
+	}
+	sx(stack);
+}
+
 // a is "from", b is "to"
 void	sort(t_stack *from, t_stack *to)
 {
