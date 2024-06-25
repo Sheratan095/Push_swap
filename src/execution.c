@@ -100,8 +100,3 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	}
 }
 
-void	rrx(t_stack *stack)
-{
-	ft_printf("rr%c\n", stack->name);
-	rotation(stack);
-}
