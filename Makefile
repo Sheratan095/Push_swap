@@ -9,8 +9,9 @@ SRC = src/main.c \
 	src/moves.c \
 	src/utils.c \
 	src/moves/push.c \
+	src/moves/switch.c \
 
-# SRC = 	src/moves/switch.c \
+# SRC = 	
 # 	src/moves/rotate.c \
 # 	src/moves/reverse_rotate.c \
 # 	

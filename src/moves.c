@@ -12,23 +12,17 @@
 
 #include "push_swap.h"
 
-// void	px(t_stack *from, t_stack *to)
+// void	sx(t_stack *a)
 // {
-// 	ft_printf("p%c\n", to->name);
-// 	push_to(from, to);
+// 	int	temp;
+
+// 	ft_printf("s%c\n", a->name);
+// 	if (ft_is_stack_empty(a) || a->length < 2)
+// 		return ;
+// 	temp = a->head->value;
+// 	a->head->value = a->head->next->value;
+// 	a->head->next->value = temp;
 // }
-
-void	sx(t_stack *a)
-{
-	int	temp;
-
-	ft_printf("s%c\n", a->name);
-	if (ft_is_stack_empty(a) || a->length < 2)
-		return ;
-	temp = a->head->value;
-	a->head->value = a->head->next->value;
-	a->head->next->value = temp;
-}
 
 void	rr(t_stack *a, t_stack *b)
 {
