@@ -23,8 +23,6 @@ t_stack	*load_stack(int argc, char **argv, t_stack *stack);
 
 void	ft_sort_three(t_stack *stack);
 
-void	push_to(t_stack *stack_1, t_stack *stack_2);
-
 void	reverse_rotation(t_stack *a);
 
 void	rotation(t_stack *a);
