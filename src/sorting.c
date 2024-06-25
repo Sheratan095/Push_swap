@@ -12,13 +12,6 @@
 
 #include "push_swap.h"
 
-int	abs(int a)
-{
-	if (a < 0)
-		a = -a;
-	return (a);
-}
-
 // a is "from", b is "to"
 void	sort(t_stack *from, t_stack *to)
 {

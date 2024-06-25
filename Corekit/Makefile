@@ -64,6 +64,7 @@ SRC = ./src/char/ft_tolower.c \
 	./src/2d_matrix/ft_duplicate_char_matrix.c \
 	./src/2d_matrix/ft_print_char_matrix.c \
 	./src/2d_matrix/ft_free_matrix.c \
+	./src/int/ft_get_absolute.c \
 
 SRC_STACK = ./src/int_stack/ft_initialize_stack.c \
 			./src/int_stack/ft_create_node.c \

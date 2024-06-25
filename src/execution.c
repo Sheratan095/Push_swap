@@ -60,10 +60,10 @@ int	get_lowest_cost(t_stack *a, t_stack *b)
 
 	ca = a->head;
 	cb = b->head;
-	lowest = abs(ca->value) + abs(cb->value);
+	lowest = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
 	while (cb)
 	{
-		i = abs(ca->value) + abs(cb->value);
+		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
 		ca = ca->next;
 		cb = cb->next;
 		if (i < lowest)
@@ -89,7 +89,7 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	node = b->head;
 	while (node)
 	{
-		i = abs(ca->value) + abs(cb->value);
+		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
 		if (i == 0)
 			return ((void)px(b, a));
 		if (i == lowcost)
