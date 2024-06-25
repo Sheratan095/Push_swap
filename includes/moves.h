@@ -90,8 +90,12 @@
 
 //------------------------------------PUSH------------------------------------
 
-// t_bool	pa(t_stack *a, t_stack *b);
-
-// t_bool	pb(t_stack *a, t_stack *b);
+/**
+	@brief Move 1° element of stack_2 to stack_1
+	@param t_stack pointer to stack 1 (to)
+	@param t_stack pointer to stack 2 (from)
+	@return Boolean that determines if the operation went well
+*/
+t_bool	px(t_stack *stack_1, t_stack *stack_2);
 
 #endif

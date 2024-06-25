@@ -8,6 +8,7 @@ SRC = src/main.c \
 	src/stack_loading.c \
 	src/moves.c \
 	src/utils.c \
+	src/moves/push.c \
 
 # SRC = 	src/moves/switch.c \
 # 	src/moves/rotate.c \

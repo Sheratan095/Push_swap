@@ -12,12 +12,6 @@
 
 #include "push_swap.h"
 
-void	px(t_stack *from, t_stack *to)
-{
-	ft_printf("p%c\n", to->name);
-	push_to(from, to);
-}
-
 void	sx(t_stack *a)
 {
 	int	temp;
