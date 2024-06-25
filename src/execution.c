@@ -19,11 +19,11 @@ void	move(int movement, t_stack *stack)
 	if (movement > 0)
 	{
 		while (movement--)
-			rx(stack);
+			rrx(stack);
 	}
 	else
 		while (movement++)
-			rrx(stack);
+			rx(stack);
 }
 
 void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
@@ -32,7 +32,7 @@ void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
-			rr(a, b);
+			rrr(a, b);
 			moves_a--;
 			moves_b--;
 		}
@@ -41,7 +41,7 @@ void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
-			rrr(a, b);
+			rr(a, b);
 			moves_a++;
 			moves_b++;
 		}

@@ -65,14 +65,14 @@ void	ft_sort_three(t_stack *stack)
 	n = stack->head;
 	if (n->value < n->next->value)
 	{
-		rrx(stack);
+		rx(stack);
 		if (ft_is_stack_ordered(stack))
 			return ;
 	}
 	if (n->value > n->next->value)
 	{
 		if (n->value > n->next->next->value)
-			rx(stack);
+			rrx(stack);
 		if (ft_is_stack_ordered(stack))
 			return ;
 	}
