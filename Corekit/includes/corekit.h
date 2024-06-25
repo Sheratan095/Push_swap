@@ -38,7 +38,7 @@ char	*ft_strjoin_free_s1(char *s1, char *s2);
 
 t_bool	ft_is_string_numeric(const char *str);
 
-int 	ft_get_absolute(int number);
+int		ft_get_absolute(int number);
 
 //MATIRX
 
