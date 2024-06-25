@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//absolute value
 int	abs(int a)
 {
 	if (a < 0)
@@ -47,11 +48,4 @@ void	reverse_rotation(t_stack *a)
 	if (ft_is_stack_empty(a) || a->length < 2)
 		return ;
 	a = ft_push_tail(a, ft_pop(a));
-}
-
-void	rotation(t_stack *a)
-{
-	if (ft_is_stack_empty(a) || a->length < 2)
-		return ;
-	a = ft_push(a, ft_pop_tail(a));
 }

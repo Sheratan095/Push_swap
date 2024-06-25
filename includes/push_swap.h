@@ -37,11 +37,7 @@ int		get_insertion_cost(t_stack *b, int value);
 
 void	rrr(t_stack *a, t_stack *b);
 
-void	rr(t_stack *a, t_stack *b);
-
 void	rrx(t_stack *a);
-
-void	rx(t_stack *a);
 
 void	sort(t_stack *from, t_stack *to);
 
