@@ -63,7 +63,7 @@ char	**take_arguments(int argc, char **argv, int *i, t_stack *stack)
 	{
 		*i = 0;
 		result = ft_split(argv[1], ' ');
-		if (ft_count_matrix_row((void **)result) == 0)
+		if (ft_count_matrix_row((const void **)result) == 0)
 			error(argc, result, stack);
 	}
 	else

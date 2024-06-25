@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 }
 
 //TO DO da spostare e cambiare nome possibilmente (start_sorting)
+//Just for normi
 static void	sort_them_all(t_stack *a, t_stack *b)
 {
 	if (a->length == 2 && a->head->value > a->head->next->value)
