@@ -31,12 +31,12 @@ void		move(int movement, t_stack *stack);
 void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 {
 	t_stack_node	*node;
-	int				lowcost;
+	int				lowest_cost;
 	int				i;
 	t_stack_node	*ca;
 	t_stack_node	*cb;
 
-	lowcost = get_lowest_cost(sa, sb);
+	lowest_cost = get_lowest_cost(sa, sb);
 	ca = sa->head;
 	cb = sb->head;
 	node = b->head;
@@ -45,39 +45,13 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
 		if (i == 0)
 			return ((void)px(b, a));
-		if (i == lowcost)
+		if (i == lowest_cost)
 			return (play(ca->value, cb->value, a, b));
 		node = node->next;
 		ca = ca->next;
 		cb = cb->next;
 	}
 }
-
-
-// void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
-// {
-// 	t_stack_node	*node;
-// 	int				lowcost;
-// 	int				i;
-// 	t_stack_node	*ca;
-// 	t_stack_node	*cb;
-
-// 	lowcost = get_lowest_cost(sa, sb);
-// 	ca = sa->head;
-// 	cb = sb->head;
-// 	node = b->head;
-// 	while (node)
-// 	{
-// 		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
-// 		if (i == 0)
-// 			return ((void)px(b, a));
-// 		if (i == lowcost)
-// 			return (play(ca->value, cb->value, a, b));
-// 		node = node->next;
-// 		ca = ca->next;
-// 		cb = cb->next;
-// 	}
-// }
 
 void	move(int movement, t_stack *stack)
 {
