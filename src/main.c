@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	sort_them_all(t_stack *a, t_stack *b);
+static void	start_sorting(t_stack *a, t_stack *b);
 
 // Controlla il numero degli argomenti, se è 0 restituisce il terminale
 // Carica lo stack dai parametri e di conseguenza ne veririfica la validità
@@ -35,14 +35,22 @@ int	main(int argc, char **argv)
 	b = ft_initialize_stack(b);
 	b->name = 'b';
 	if (!ft_is_stack_ordered(a))
-		sort_them_all(a, b);
+		start_sorting(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }
 
-//TO DO da spostare e cambiare nome possibilmente (start_sorting)
-//Just for normi
-static void	sort_them_all(t_stack *a, t_stack *b)
+// Se ci sono due numeri e il primo è maggiore del secondo => switch
+// Se ce ne sono 3 => sort_three
+// Altrimenti
+//	Metti il primo elemento di b in a
+//	Finchè lo stack a non contiene 3 elementi ordinati
+//	 sort(a, b)
+//	Ordina i 3 elementi nello stack a
+//	Finchè lo stack b non è vuoto
+//	 sort(a, b)
+//	Muove in posizione il più piccolo elemento di a 
+static void	start_sorting(t_stack *a, t_stack *b)
 {
 	if (a->length == 2 && a->head->value > a->head->next->value)
 		sx(a);
@@ -51,7 +59,7 @@ static void	sort_them_all(t_stack *a, t_stack *b)
 	else
 	{
 		px(a, b);
-		while (a->length > 3 && !ft_is_stack_ordered(a))
+		while (a->length > 3)
 			sort(b, a);
 		ft_sort_three(a);
 		while (b->length != 0)
