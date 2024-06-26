@@ -14,7 +14,7 @@
 
 static int	get_lowest_cost(t_stack *a, t_stack *b);
 static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b);
-void	move(int movement, t_stack *stack);
+void		move(int movement, t_stack *stack);
 
 // trova il node meno costoso da ordinare e lo ordina
 void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)

@@ -14,9 +14,13 @@
 
 static void	sort_them_all(t_stack *a, t_stack *b);
 
-//Check number of arguments:
-// If no parameters are specified, the program must not display anything
-//	and give the prompt back
+// Controlla il numero degli argomenti, se è 0 restituisce il terminale
+// Carica lo stack dai parametri e di conseguenza ne veririfica la validità
+//	(lo stack_a viene inizializzato dentro load_stack())
+// Inizializzazione dello stack_b e assegna i nomi (servono solo per il print)
+// Se lo stack non è ordinato
+//	Ordinalo
+// Alla fine libera tutto
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -30,10 +34,10 @@ int	main(int argc, char **argv)
 	a->name = 'a';
 	b = ft_initialize_stack(b);
 	b->name = 'b';
-	if (ft_is_stack_ordered(a))
-		return (ft_free_stack(a), ft_free_stack(b), 0);
-	sort_them_all(a, b);
-	return (ft_free_stack(a), ft_free_stack(b), 0);
+	if (!ft_is_stack_ordered(a))
+		sort_them_all(a, b);
+	ft_free_stack(a);
+	ft_free_stack(b);
 }
 
 //TO DO da spostare e cambiare nome possibilmente (start_sorting)
