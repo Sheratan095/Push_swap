@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	get_lowest_cost(t_stack *a, t_stack *b);
+static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b);
 static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b);
 void		move(int movement, t_stack *stack);
 
@@ -92,21 +92,21 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	px(b, a);
 }
 
-static int	get_lowest_cost(t_stack *a, t_stack *b)
+static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b)
 {
 	int				i;
 	int				lowest;
-	t_stack_node	*ca;
-	t_stack_node	*cb;
+	t_stack_node	*cost_a;
+	t_stack_node	*cost_b;
 
-	ca = a->head;
-	cb = b->head;
-	lowest = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
-	while (cb)
+	cost_a = costs_a->head;
+	cost_b = costs_b->head;
+	lowest = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
+	while (cost_b)
 	{
-		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
-		ca = ca->next;
-		cb = cb->next;
+		i = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
+		cost_a = cost_a->next;
+		cost_b = cost_b->next;
 		if (i < lowest)
 			lowest = i;
 		if (lowest == 0)
