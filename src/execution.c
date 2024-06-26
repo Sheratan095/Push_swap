@@ -96,7 +96,7 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 			moves_b--;
 		}
 	}
-	else
+	else if (moves_a < 0 && moves_b < 0)
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
