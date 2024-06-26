@@ -107,6 +107,7 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	}
 	move(moves_a, a);
 	move(moves_b, b);
+	px(b, a);
 }
 
 // Trova la coppia di nodi nei due stack che hanno
