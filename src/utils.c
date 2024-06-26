@@ -46,6 +46,7 @@ int	get_selection_cost(t_stack *stack, t_stack_node *node)
 {
 	int	target;
 
+	target = 0;
 	if (stack->name == 'a')
 		target = greatest_smaller_than(stack, node->value);
 	else if (stack->name == 'b')
