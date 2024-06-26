@@ -12,7 +12,7 @@
 
 #include "moves.h"
 
-t_bool	ops_reverse_rotate(t_stack *stack);
+static t_bool	ops_reverse_rotate(t_stack *stack);
 
 t_bool	rrx(t_stack *stack)
 {
@@ -34,7 +34,7 @@ t_bool	rrr(t_stack *a, t_stack *b)
 	return (result);
 }
 
-t_bool	ops_reverse_rotate(t_stack *stack)
+static t_bool	ops_reverse_rotate(t_stack *stack)
 {
 	int	tmp_head;
 

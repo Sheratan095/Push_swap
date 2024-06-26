@@ -12,7 +12,7 @@
 
 #include "moves.h"
 
-t_bool	ops_rotate(t_stack *stack);
+static t_bool	ops_rotate(t_stack *stack);
 
 t_bool	rx(t_stack *stack)
 {
@@ -23,6 +23,7 @@ t_bool	rx(t_stack *stack)
 		ft_printf("r%c\n", stack->name);
 	return (result);
 }
+
 t_bool	rr(t_stack *a, t_stack *b)
 {
 	t_bool	result;
@@ -33,7 +34,7 @@ t_bool	rr(t_stack *a, t_stack *b)
 	return (result);
 }
 
-t_bool	ops_rotate(t_stack *stack)
+static t_bool	ops_rotate(t_stack *stack)
 {
 	int	tmp_tail;
 

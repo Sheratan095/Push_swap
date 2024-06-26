@@ -1,6 +1,6 @@
 NAME		= push_swap
 
-COREKIT_PATH = ./Corekit
+COREKIT_PATH = ./corekit
 
 SRC = src/main.c \
 	src/execution.c \
@@ -17,7 +17,6 @@ INCLUDES = ./includes
 ARG = 1 3 2
 
 FLAGS		= -Wall -Werror -Wextra -g
-#TO DO rimettere le flag
 
 OBJS		= $(SRC:%.c=%.o)
 
@@ -31,7 +30,6 @@ all:$(NAME)
 %.o: %.c
 	@cc -c $< -o $@ $(FLAGS) -I$(COREKIT_PATH)/includes -I $(INCLUDES)
 
-#-i is used to ingore errors
 clean:
 	@rm -fr $(OBJS)
 	@${MAKE} -C corekit clean -s
@@ -46,9 +44,6 @@ fclean: clean
 	@echo "$(RED)[COREKIT]:\t COREKIT FCLEAN$(RESET)"
 
 re: fclean all
-
-remove_mlx:
-	@rm -r mlx
 
 test: all
 	 ./$(NAME) $(ARG)
