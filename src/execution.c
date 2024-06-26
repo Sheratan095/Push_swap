@@ -19,6 +19,8 @@ void		move(int movement, t_stack *stack);
 // trova il node meno costoso da portare in posizione ed esegue la mossa
 // a è lo stack da cui prendere i nodi
 // b è lo stack dove vanno messi i nodi
+// PERCHÈ QUESTA FUNZIONE VIENE USATA SIA LA PRIMA VOLTA PER PORTARE GLI
+// ELEMENTI DA a A b LA PRIMA VOLTA CHE PER RIPORTARCELI ALLA FINE
 // sa contiente i costi di ogni elemento di a
 // sb contiente i costi di ogni elemento di b
 // ca e cb sono usati come variabili temporanee
@@ -53,6 +55,11 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 	}
 }
 
+// movement: numero di rotazioni da effettuare
+// se movement > 0
+//	=> effettua reverse rotate finchè movement è 0
+// se movement < 0
+//	> effettua rotate finchè movement è 0
 void	move(int movement, t_stack *stack)
 {
 	if (!movement)
@@ -63,10 +70,21 @@ void	move(int movement, t_stack *stack)
 			rx(stack);
 	}
 	else
+	{
 		while (movement++)
 			rrx(stack);
+	}
 }
 
+// a è lo stack da cui prendere i nodi
+// b è lo stack dove vanno messi i nodi
+// moves_a costo per il nodo nello stack_a (usato come count)
+// moves_b costo per il nodo nello stack_b (usato come count)
+// Se entrambi i costi sono positivi
+//	reverse rotate simultaneo (rrr) finchè non si sono esaurite le mosse
+// Se entrambi i costi sono negativi
+//	rotate simultaneo (rr) finchè non si sono esaurite le mosse
+// Esegue eventuali mosse rimanenti per ogni stack singolarmente
 static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 {
 	if (moves_a > 0 && moves_b > 0)
@@ -78,7 +96,7 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 			moves_b--;
 		}
 	}
-	else if (moves_a < 0 && moves_b < 0)
+	else
 	{
 		while (moves_a != 0 && moves_b != 0)
 		{
@@ -89,7 +107,6 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	}
 	move(moves_a, a);
 	move(moves_b, b);
-	px(b, a);
 }
 
 // Trova la coppia di nodi nei due stack che hanno
