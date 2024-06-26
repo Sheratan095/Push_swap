@@ -15,30 +15,42 @@
 static int	smallest_bigger_than(t_stack *stack, int x);
 static int	greatest_smaller_than(t_stack *stack, int x);
 
-//ottiene il costo di un nodo guardando la sua posizione
-int	get_insertion_cost(t_stack *b, int value)
+// Determina il costo necessario per portare il nodo in cima allo stack
+//	attraverso rotation o reverse rotaion
+// Ottiene la posizione di tale valore nello stack
+// Se la posizione > metà della lunghezza dello stack
+//	=> si trova nella seconda metà
+//		il costo è calcolato in reverse rotation
+// Altrimenti: il costo sarà il numero di rotation corrispondente
+// 	alla sua posizione
+int	get_insertion_cost(t_stack *stack, int value)
 {
 	int	cost;
 	int	position;
 
-	position = ft_get_position_in_stack(b, ft_stack_contains(b, value));
-	if ((size_t)position > b->length / 2)
-		cost = -(b->length - position);
+	position = ft_get_position_in_stack(stack, ft_stack_contains(stack, value));
+	if ((size_t)position > stack->length / 2)
+		cost = -(stack->length - position);
 	else
 		cost = position;
 	return (cost);
 }
 
-//ottiene il target node in base all'ordine "a"->decrescente "b"->crescente
-int	get_selection_cost(t_stack *a, t_stack_node *node)
+// Ottiene il costo per portare il nodo in prima posizione
+// Se è lo stack 'a' => ordine decrescente
+//	il nodo target sarà il più piccolo maggiore del valore di node
+// Se è lo stack 'b' => ordine crescente
+//	il nodo target sarà il più grande minore del valore di node
+// Restituisce il costo per portare il valore target in prima posizione
+int	get_selection_cost(t_stack *stack, t_stack_node *node)
 {
 	int	target;
 
-	if (a->name == 'a')
-		target = greatest_smaller_than(a, node->value);
-	else if (a->name == 'b')
-		target = smallest_bigger_than(a, node->value);
-	return (get_insertion_cost(a, target));
+	if (stack->name == 'a')
+		target = greatest_smaller_than(stack, node->value);
+	else if (stack->name == 'b')
+		target = smallest_bigger_than(stack, node->value);
+	return (get_insertion_cost(stack, target));
 }
 
 // Trova il più grande numero nello stack minore di x
