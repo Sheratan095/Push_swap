@@ -45,11 +45,11 @@ int	get_selection_cost(t_stack *a, t_stack_node *node)
 // Scorre tutto lo stack attraverso il cursor (tmp)
 // 	Se il valore in questione è minore di x e
 //		o x = result : nessun altro numero è stato ancora trovato
-//		oppure il valore > result : è stato provato un nuovo numero maggiore
-// 		=> il risultato diventa quel numero
+//		oppure il valore > result : è stato trovato un nuovo numero maggiore
+// 	  => il risultato diventa quel numero
 // 	Il cursore va avanti
 // Se result == x vuol dire che non è stato trovato nessun valore minore di x
-//	il risultato sarà il valore massimo dello stack
+//	il risultato sarà il valore massimo nello stack
 static int	smallest_bigger_than(t_stack *stack, int x)
 {
 	t_stack_node	*cursor;
@@ -68,20 +68,29 @@ static int	smallest_bigger_than(t_stack *stack, int x)
 	return (result);
 }
 
+// Trova il più piccolo numero nello stack maggiore di x
+// Scorre tutto lo stack attraverso il cursor (tmp)
+// 	Se il valore in questione è maggiore di x e
+//		o x = result : nessun altro numero è stato ancora trovato
+//		oppure il valore < result : è stato trovato un nuovo numero minore
+// 	  => il risultato diventa quel numero
+// 	Il cursore va avanti
+// Se result == x vuol dire che non è stato trovato nessun valore minore di x
+//	il risultato sarà il valore minimo nello stack
 static int	greatest_smaller_than(t_stack *stack, int x)
 {
 	t_stack_node	*cursor;
-	int				target;
+	int				result;
 
-	target = x;
+	result = x;
 	cursor = stack->head;
 	while (cursor != NULL)
 	{
-		if (cursor->value > x && (x == target || cursor->value < target))
-			target = cursor->value;
+		if (cursor->value > x && (x == result || cursor->value < result))
+			result = cursor->value;
 		cursor = cursor->next;
 	}
-	if (target == x)
-		target = ft_get_min_value(stack);
-	return (target);
+	if (result == x)
+		result = ft_get_min_value(stack);
+	return (result);
 }
