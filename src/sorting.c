@@ -36,7 +36,14 @@ void	ft_sort_three(t_stack *stack)
 	sx(stack);
 }
 
-// a is "from", b is "to"
+// a è lo stack da cui prendere i nodi (from)
+// b è lo stack dove vanno messi i nodi (to)
+// PERCHÈ QUESTA FUNZIONE VIENE USATA SIA LA PRIMA VOLTA PER PORTARE GLI
+// ELEMENTI DA a A b LA PRIMA VOLTA CHE PER RIPORTARCELI ALLA FINE
+// Sposta tutti gli elementi dal primo al secondo nel modo più efficente possibile
+// Ottiene i costi di ogni nodo in entrambi gli stack
+// Esegue la mossa (serie di operazioni) migliore basandosi sui costi raccolti
+// Libera gli stack contenenti i costi
 void	sort(t_stack *from, t_stack *to)
 {
 	t_stack			*cost_a;
