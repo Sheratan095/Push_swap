@@ -29,8 +29,8 @@ int		get_insertion_cost(t_stack *b, int value);
 
 void	sort(t_stack *from, t_stack *to);
 
-void	move(int movement, t_stack *stack);
+void	make_rotations(int movement, t_stack *stack);
 
-void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb);
+void	execute_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb);
 
 #endif

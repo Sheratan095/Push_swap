@@ -64,6 +64,6 @@ static void	start_sorting(t_stack *a, t_stack *b)
 		ft_sort_three(a);
 		while (b->length != 0)
 			sort(a, b);
-		move(get_insertion_cost(a, ft_get_min_value(a)), a);
+		make_rotations(get_insertion_cost(a, ft_get_min_value(a)), a);
 	}
 }

@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b);
-static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b);
+static void	make_moves(int moves_a, int moves_b, t_stack *a, t_stack *b);
 void		move(int movement, t_stack *stack);
 
 // trova il node meno costoso da portare in posizione ed esegue la mossa
@@ -30,7 +30,7 @@ void		move(int movement, t_stack *stack);
 //	 => push
 //	se la somma == minor costo trovato precentemente
 //	 => inizia ad eseguire le mosse
-void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
+void	execute_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 {
 	t_stack_node	*node;
 	int				lowest_cost;
@@ -48,7 +48,7 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 		if (i == 0)
 			return ((void)px(b, a));
 		if (i == lowest_cost)
-			return (play(ca->value, cb->value, a, b));
+			return (make_moves(ca->value, cb->value, a, b));
 		node = node->next;
 		ca = ca->next;
 		cb = cb->next;
@@ -60,7 +60,7 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 //	=> effettua reverse rotate finchè movement è 0
 // se movement < 0
 //	> effettua rotate finchè movement è 0
-void	move(int movement, t_stack *stack)
+void	make_rotations(int movement, t_stack *stack)
 {
 	if (!movement)
 		return ;
@@ -85,7 +85,7 @@ void	move(int movement, t_stack *stack)
 // Se entrambi i costi sono negativi
 //	rotate simultaneo (rr) finchè non si sono esaurite le mosse
 // Esegue eventuali mosse rimanenti per ogni stack singolarmente
-static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
+static void	make_moves(int moves_a, int moves_b, t_stack *a, t_stack *b)
 {
 	if (moves_a > 0 && moves_b > 0)
 	{
@@ -105,8 +105,8 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 			moves_b++;
 		}
 	}
-	move(moves_a, a);
-	move(moves_b, b);
+	make_rotations(moves_a, a);
+	make_rotations(moves_b, b);
 	px(b, a);
 }
 
