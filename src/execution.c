@@ -12,67 +12,9 @@
 
 #include "push_swap.h"
 
-void	move(int movement, t_stack *stack)
-{
-	if (!movement)
-		return ;
-	if (movement > 0)
-	{
-		while (movement--)
-			rx(stack);
-	}
-	else
-		while (movement++)
-			rrx(stack);
-}
-
-void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
-{
-	if (moves_a > 0 && moves_b > 0)
-	{
-		while (moves_a != 0 && moves_b != 0)
-		{
-			rr(a, b);
-			moves_a--;
-			moves_b--;
-		}
-	}
-	else if (moves_a < 0 && moves_b < 0)
-	{
-		while (moves_a != 0 && moves_b != 0)
-		{
-			rrr(a, b);
-			moves_a++;
-			moves_b++;
-		}
-	}
-	move(moves_a, a);
-	move(moves_b, b);
-	px(b, a);
-}
-
-int	get_lowest_cost(t_stack *a, t_stack *b)
-{
-	int				i;
-	int				lowest;
-	t_stack_node	*ca;
-	t_stack_node	*cb;
-
-	ca = a->head;
-	cb = b->head;
-	lowest = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
-	while (cb)
-	{
-		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
-		ca = ca->next;
-		cb = cb->next;
-		if (i < lowest)
-			lowest = i;
-		if (lowest == 0)
-			return (lowest);
-	}
-	return (lowest);
-}
+static int	get_lowest_cost(t_stack *a, t_stack *b);
+static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b);
+void	move(int movement, t_stack *stack);
 
 // trova il node meno costoso da ordinare e lo ordina
 void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
@@ -98,4 +40,66 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 		ca = ca->next;
 		cb = cb->next;
 	}
+}
+
+void	move(int movement, t_stack *stack)
+{
+	if (!movement)
+		return ;
+	if (movement > 0)
+	{
+		while (movement--)
+			rx(stack);
+	}
+	else
+		while (movement++)
+			rrx(stack);
+}
+
+static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
+{
+	if (moves_a > 0 && moves_b > 0)
+	{
+		while (moves_a != 0 && moves_b != 0)
+		{
+			rr(a, b);
+			moves_a--;
+			moves_b--;
+		}
+	}
+	else if (moves_a < 0 && moves_b < 0)
+	{
+		while (moves_a != 0 && moves_b != 0)
+		{
+			rrr(a, b);
+			moves_a++;
+			moves_b++;
+		}
+	}
+	move(moves_a, a);
+	move(moves_b, b);
+	px(b, a);
+}
+
+static int	get_lowest_cost(t_stack *a, t_stack *b)
+{
+	int				i;
+	int				lowest;
+	t_stack_node	*ca;
+	t_stack_node	*cb;
+
+	ca = a->head;
+	cb = b->head;
+	lowest = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
+	while (cb)
+	{
+		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
+		ca = ca->next;
+		cb = cb->next;
+		if (i < lowest)
+			lowest = i;
+		if (lowest == 0)
+			return (lowest);
+	}
+	return (lowest);
 }

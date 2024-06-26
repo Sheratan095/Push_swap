@@ -12,41 +12,8 @@
 
 #include "push_swap.h"
 
-int	smallest_bigger_than(t_stack *stack, int x)
-{
-	t_stack_node	*cursor;
-	int				target;
-
-	target = x;
-	cursor = stack->head;
-	while (cursor != NULL)
-	{
-		if (cursor->value < x && (x == target || cursor->value > target))
-			target = cursor->value;
-		cursor = cursor->next;
-	}
-	if (target == x)
-		target = ft_get_max_value(stack);
-	return (target);
-}
-
-int	greatest_smaller_than(t_stack *stack, int x)
-{
-	t_stack_node	*cursor;
-	int				target;
-
-	target = x;
-	cursor = stack->head;
-	while (cursor != NULL)
-	{
-		if (cursor->value > x && (x == target || cursor->value < target))
-			target = cursor->value;
-		cursor = cursor->next;
-	}
-	if (target == x)
-		target = ft_get_min_value(stack);
-	return (target);
-}
+static int	smallest_bigger_than(t_stack *stack, int x);
+static int	greatest_smaller_than(t_stack *stack, int x);
 
 //ottiene il costo di un nodo guardando la sua posizione
 int	get_insertion_cost(t_stack *b, int value)
@@ -72,4 +39,40 @@ int	get_selection_cost(t_stack *a, t_stack_node *node)
 	else if (a->name == 'b')
 		target = smallest_bigger_than(a, node->value);
 	return (get_insertion_cost(a, target));
+}
+
+static int	smallest_bigger_than(t_stack *stack, int x)
+{
+	t_stack_node	*cursor;
+	int				target;
+
+	target = x;
+	cursor = stack->head;
+	while (cursor != NULL)
+	{
+		if (cursor->value < x && (x == target || cursor->value > target))
+			target = cursor->value;
+		cursor = cursor->next;
+	}
+	if (target == x)
+		target = ft_get_max_value(stack);
+	return (target);
+}
+
+static int	greatest_smaller_than(t_stack *stack, int x)
+{
+	t_stack_node	*cursor;
+	int				target;
+
+	target = x;
+	cursor = stack->head;
+	while (cursor != NULL)
+	{
+		if (cursor->value > x && (x == target || cursor->value < target))
+			target = cursor->value;
+		cursor = cursor->next;
+	}
+	if (target == x)
+		target = ft_get_min_value(stack);
+	return (target);
 }
