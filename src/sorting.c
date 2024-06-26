@@ -40,7 +40,7 @@ void	ft_sort_three(t_stack *stack)
 // b è lo stack dove vanno messi i nodi (to)
 // PERCHÈ QUESTA FUNZIONE VIENE USATA SIA LA PRIMA VOLTA PER PORTARE GLI
 // ELEMENTI DA a A b LA PRIMA VOLTA CHE PER RIPORTARCELI ALLA FINE
-// Sposta tutti gli elementi dal primo al secondo nel modo più efficente possibile
+// Sposta tutti gli elementi dal primo al secondo nel modo più efficente
 // Ottiene i costi di ogni nodo in entrambi gli stack
 // Esegue la mossa (serie di operazioni) migliore basandosi sui costi raccolti
 // Libera gli stack contenenti i costi

@@ -121,7 +121,7 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 //	 => ritorna perché non è possibile trovare un costo minore di esso
 static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b)
 {
-	int				temp_sum;
+	int				sum;
 	int				lowest;
 	t_stack_node	*cost_a;
 	t_stack_node	*cost_b;
@@ -131,11 +131,11 @@ static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b)
 	lowest = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
 	while (cost_b)
 	{
-		temp_sum = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
+		sum = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
 		cost_a = cost_a->next;
 		cost_b = cost_b->next;
-		if (temp_sum < lowest)
-			lowest = temp_sum;
+		if (sum < lowest)
+			lowest = sum;
 		if (lowest == 0)
 			return (lowest);
 	}
