@@ -38,6 +38,8 @@ static t_bool	ops_reverse_rotate(t_stack *stack)
 {
 	int	tmp_head;
 
+	if (ft_is_stack_empty(stack) || stack->length < 2)
+		return (false);
 	if (stack == NULL || stack->length < 2)
 		return (false);
 	tmp_head = ft_pop_tail(stack);
