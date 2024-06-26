@@ -92,9 +92,19 @@ static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b)
 	px(b, a);
 }
 
+// Trova la coppia di nodi nei due stack che hanno
+//	il minor costo per essere eseguite
+// costs_a è lo stack dei costi da cui vanno levati i nodi
+// costs_b è lo stack dei costi dove vanno inseriti i nodi di a
+// Scorre tutto lo stack dei costi di b
+//  ottiene la somma dei costi dei nodi nelle posizione corrispondente
+//  Se è minor del minor costo finora trovato
+//	 => il risultato (minor costo) diventerò il valore appena calcolato
+//	Se il valore == 0
+//	 => ritorna perché non è possibile trovare un costo minore di esso
 static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b)
 {
-	int				i;
+	int				temp_sum;
 	int				lowest;
 	t_stack_node	*cost_a;
 	t_stack_node	*cost_b;
@@ -104,11 +114,11 @@ static int	get_lowest_cost(t_stack *costs_a, t_stack *costs_b)
 	lowest = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
 	while (cost_b)
 	{
-		i = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
+		temp_sum = ft_get_absolute(cost_a->value) + ft_get_absolute(cost_b->value);
 		cost_a = cost_a->next;
 		cost_b = cost_b->next;
-		if (i < lowest)
-			lowest = i;
+		if (temp_sum < lowest)
+			lowest = temp_sum;
 		if (lowest == 0)
 			return (lowest);
 	}
