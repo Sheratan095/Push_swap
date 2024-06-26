@@ -6,7 +6,6 @@ SRC = src/main.c \
 	src/execution.c \
 	src/sorting.c \
 	src/stack_loading.c \
-	src/moves.c \
 	src/utils.c \
 	src/moves/push.c \
 	src/moves/switch.c \
