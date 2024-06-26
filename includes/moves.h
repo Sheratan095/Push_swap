@@ -36,26 +36,19 @@ t_bool	ss(t_stack *a, t_stack *b);
 //-----------------------------------ROTATE-----------------------------------
 
 /**
-	@brief Move last element of stack a in 1° position
+	@brief Move first element of stack x in last position
 	@param t_stack pointer to stack a
 	@return Boolean that determines if the operation went well
 */
-// t_bool	ra(t_stack *a);
+t_bool	rx(t_stack *stack);
 
 /**
-	@brief Move last element of stack b in 1° position
-	@param t_stack pointer to stack b
-	@return Boolean that determines if the operation went well
-*/
-// t_bool	rb(t_stack *b);
-
-/**
-	@brief Move last element of both stacks in 1° position
+	@brief Move first element of both stacks in last position
 	@param t_stack pointer to stack a
 	@param t_stack pointer to stack b
 	@return Boolean that determines if the operation went well
 */
-// t_bool	rr(t_stack *a, t_stack *b);
+t_bool	rr(t_stack *a, t_stack *b);
 
 //-------------------------------REVERSE ROTATE-------------------------------
 

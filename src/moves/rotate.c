@@ -14,19 +14,23 @@
 
 t_bool	ops_rotate(t_stack *stack);
 
-t_bool	ra(t_stack *a)
+t_bool	rx(t_stack *stack)
 {
-	return (ops_rotate(a));
-}
+	t_bool	result;
 
-t_bool	rb(t_stack *b)
-{
-	return (ops_rotate(b));
+	result = ops_rotate(stack);
+	if (result)
+		ft_printf("r%c\n", stack->name);
+	return (result);
 }
-
 t_bool	rr(t_stack *a, t_stack *b)
 {
-	return (ops_rotate(a) && ops_rotate(b));
+	t_bool	result;
+
+	result = ops_rotate(a) && ops_rotate(b);
+	if (result)
+		ft_printf("rr\n");
+	return (result);
 }
 
 t_bool	ops_rotate(t_stack *stack)
@@ -35,7 +39,7 @@ t_bool	ops_rotate(t_stack *stack)
 
 	if (stack == NULL || stack->length < 2)
 		return (false);
-	tmp_tail = ft_pop_tail(stack);
-	ft_push(stack, tmp_tail);
+	tmp_tail = ft_pop(stack);
+	ft_push_tail(stack, tmp_tail);
 	return (true);
 }

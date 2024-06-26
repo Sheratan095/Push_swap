@@ -16,18 +16,18 @@ void	reverse_rotation(t_stack *a);
 
 void	rotation(t_stack *a);
 
-void	rx(t_stack *stack)
-{
-	ft_printf("r%c\n", stack->name);
-	rotation(stack);
-}
+// void	rx(t_stack *stack)
+// {
+// 	ft_printf("r%c\n", stack->name);
+// 	rotation(stack);
+// }
 
-void	rr(t_stack *a, t_stack *b)
-{
-	ft_printf("rr\n");
-	rotation(a);
-	rotation(b);
-}
+// void	rr(t_stack *a, t_stack *b)
+// {
+// 	ft_printf("rr\n");
+// 	rotation(a);
+// 	rotation(b);
+// }
 
 void	rrx(t_stack *stack)
 {
