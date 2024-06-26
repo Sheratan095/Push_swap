@@ -22,36 +22,31 @@ void	rotation(t_stack *a);
 // 	rotation(stack);
 // }
 
-// void	rr(t_stack *a, t_stack *b)
+// 
+
+// void	rrx(t_stack *stack)
 // {
-// 	ft_printf("rr\n");
-// 	rotation(a);
-// 	rotation(b);
+// 	ft_printf("rr%c\n", stack->name);
+// 	reverse_rotation(stack);
 // }
 
-void	rrx(t_stack *stack)
-{
-	ft_printf("rr%c\n", stack->name);
-	reverse_rotation(stack);
-}
+// void	rrr(t_stack *a, t_stack *b)
+// {
+// 	ft_printf("rrr\n");
+// 	reverse_rotation(a);
+// 	reverse_rotation(b);
+// }
 
-void	rrr(t_stack *a, t_stack *b)
-{
-	ft_printf("rrr\n");
-	reverse_rotation(a);
-	reverse_rotation(b);
-}
+// void	reverse_rotation(t_stack *a)
+// {
+// 	if (ft_is_stack_empty(a) || a->length < 2)
+// 		return ;
+// 	a = ft_push(a, ft_pop_tail(a));
+// }
 
-void	reverse_rotation(t_stack *a)
-{
-	if (ft_is_stack_empty(a) || a->length < 2)
-		return ;
-	a = ft_push(a, ft_pop_tail(a));
-}
-
-void	rotation(t_stack *a)
-{
-	if (ft_is_stack_empty(a) || a->length < 2)
-		return ;
-	a = ft_push_tail(a, ft_pop(a));
-}
+// void	rotation(t_stack *a)
+// {
+// 	if (ft_is_stack_empty(a) || a->length < 2)
+// 		return ;
+// 	a = ft_push_tail(a, ft_pop(a));
+// }

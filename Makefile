@@ -11,12 +11,7 @@ SRC = src/main.c \
 	src/moves/push.c \
 	src/moves/switch.c \
 	src/moves/rotate.c \
-
-
-# SRC = 	src/moves/switch.c \
-# 	src/moves/rotate.c \
-# 	src/moves/reverse_rotate.c \
-# 	src/moves/push.c \
+	src/moves/reverse_rotate.c \
 
 INCLUDES = ./includes
 
@@ -26,10 +21,6 @@ FLAGS		= -Wall -Werror -Wextra -g
 #TO DO rimettere le flag
 
 OBJS		= $(SRC:%.c=%.o)
-
-#-s used to silent terminal output
-#2>/dev/null 1>/dev/null Redirect stout adnd stderr to null file and don't display them
-#  -> it can be writed >/dev/null 2>&1
 
 $(NAME): $(OBJS)
 	@${MAKE} -sC $(COREKIT_PATH)

@@ -27,10 +27,6 @@ int		get_selection_cost(t_stack *a, t_stack_node *node);
 
 int		get_insertion_cost(t_stack *b, int value);
 
-void	rrr(t_stack *a, t_stack *b);
-
-void	rrx(t_stack *a);
-
 void	sort(t_stack *from, t_stack *to);
 
 void	move(int movement, t_stack *stack);
