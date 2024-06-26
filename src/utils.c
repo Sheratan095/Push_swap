@@ -36,7 +36,7 @@ int	get_insertion_cost(t_stack *stack, int value)
 	return (cost);
 }
 
-// Ottiene il costo per portare il nodo in prima posizione
+// Ottiene il costo per portare il nodo nell-altro stack
 // Se è lo stack 'a' => ordine decrescente
 //	il nodo target sarà il più piccolo maggiore del valore di node
 // Se è lo stack 'b' => ordine crescente
