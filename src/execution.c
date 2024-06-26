@@ -16,7 +16,18 @@ static int	get_lowest_cost(t_stack *a, t_stack *b);
 static void	play(int moves_a, int moves_b, t_stack *a, t_stack *b);
 void		move(int movement, t_stack *stack);
 
-// trova il node meno costoso da ordinare e lo ordina
+// trova il node meno costoso da portare in posizione ed esegue la mossa
+// a è lo stack da cui prendere i nodi
+// b è lo stack dove vanno messi i nodi
+// sa contiente i costi di ogni elemento di a
+// sb contiente i costi di ogni elemento di b
+// ca e cb sono usati come variabili temporanee
+// Scorre tutto lo stack b (di arrivo)
+//	fa la somma del costo dei nodi degli stack
+//	se la somma == 0 => il valore è in cima allo stack
+//	 => push
+//	se la somma == minor costo trovato precentemente
+//	 => inizia ad eseguire le mosse
 void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 {
 	t_stack_node	*node;
@@ -41,6 +52,32 @@ void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
 		cb = cb->next;
 	}
 }
+
+
+// void	play_next_best_move(t_stack *a, t_stack *b, t_stack *sa, t_stack *sb)
+// {
+// 	t_stack_node	*node;
+// 	int				lowcost;
+// 	int				i;
+// 	t_stack_node	*ca;
+// 	t_stack_node	*cb;
+
+// 	lowcost = get_lowest_cost(sa, sb);
+// 	ca = sa->head;
+// 	cb = sb->head;
+// 	node = b->head;
+// 	while (node)
+// 	{
+// 		i = ft_get_absolute(ca->value) + ft_get_absolute(cb->value);
+// 		if (i == 0)
+// 			return ((void)px(b, a));
+// 		if (i == lowcost)
+// 			return (play(ca->value, cb->value, a, b));
+// 		node = node->next;
+// 		ca = ca->next;
+// 		cb = cb->next;
+// 	}
+// }
 
 void	move(int movement, t_stack *stack)
 {
