@@ -12,26 +12,27 @@
 
 #include "push_swap.h"
 
+// Controlla se lo stack è già ordinato
+// Se il primo è minore del secondo => rotate
+// Altrimenti (il primo è maggiore del secondo)
+//	 Se il primo è meggiore dell'ultimo => reverse rotate
+// Se lo stack non è ordinato è rimasto solo da switchare i primi
 void	ft_sort_three(t_stack *stack)
 {
-	t_stack_node	*n;
+	t_stack_node	*tmp;
 
 	if (ft_is_stack_ordered(stack))
 		return ;
-	n = stack->head;
-	if (n->value < n->next->value)
-	{
+	tmp = stack->head;
+	if (tmp->value < tmp->next->value)
 		rrx(stack);
-		if (ft_is_stack_ordered(stack))
-			return ;
-	}
-	if (n->value > n->next->value)
+	else
 	{
-		if (n->value > n->next->next->value)
+		if (tmp->value > tmp->next->next->value)
 			rx(stack);
-		if (ft_is_stack_ordered(stack))
-			return ;
 	}
+	if (ft_is_stack_ordered(stack))
+		return ;
 	sx(stack);
 }
 
